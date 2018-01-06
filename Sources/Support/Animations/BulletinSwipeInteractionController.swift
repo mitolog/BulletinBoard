@@ -42,7 +42,7 @@ class BulletinSwipeInteractionController: UIPercentDrivenInteractiveTransition, 
 
     func wire(to viewController: BulletinViewController) {
         self.viewController = viewController
-        prepareGestureRecognizer()
+        //prepareGestureRecognizer()
     }
 
     private func prepareGestureRecognizer() {
