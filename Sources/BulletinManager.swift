@@ -24,6 +24,9 @@ import UIKit
     /// Bulletin view controller.
     fileprivate var viewController: BulletinViewController!
 
+    /// Called when view controller is dismissed
+    public var dismissCompleted: (() -> Void)?
+    
     // MARK: - Background
 
     /**
@@ -393,6 +396,7 @@ extension BulletinManager {
 
         viewController.dismiss(animated: animated) {
             self.completeDismissal()
+            self.dismissCompleted?()
         }
 
         isPrepared = false

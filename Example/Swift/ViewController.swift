@@ -143,7 +143,9 @@ class ViewController: UIViewController {
         bulletinManager.backgroundViewStyle = currentBackground.style
         bulletinManager.statusBarAppearance = shouldHideStatusBar ? .hidden : .automatic
         bulletinManager.prepareAndPresent(above: self)
-
+        bulletinManager.dismissCompleted = {
+            print("dismissed")
+        }
     }
 
     func reloadManager() {
